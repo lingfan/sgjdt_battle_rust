@@ -209,8 +209,8 @@ impl Battle {
             );
             let binding = self.list.borrow();
 
-            let h1 = binding.get(self.action_legion_number).unwrap();
-            let h2 = binding.get(1 - self.action_legion_number).unwrap();
+            let h1 = binding.get(self.action_target_number).unwrap();
+            let h2 = binding.get(1 - self.action_target_number).unwrap();
             println!(
                 "{} 的 {} 向 {} 的 {} 发动攻击",
                 h1.name,
@@ -290,7 +290,7 @@ impl Battle {
         );
 
         let binding = self.list.borrow_mut();
-        let h = binding.get(1 - self.action_legion_number).unwrap();
+        let h = binding.get(1 - self.action_target_number).unwrap();
         let mut rng = rand::thread_rng();
         let mut array = [SABER_LEGION, LANCER_LEGION, ARCHER_LEGION, RIDER_LEGION];
         array.shuffle(&mut rng);
