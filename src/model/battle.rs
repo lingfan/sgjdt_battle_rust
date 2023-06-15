@@ -285,8 +285,8 @@ impl Battle {
     }
     pub fn switch_archer_legion_target(&mut self) {
         println!(
-            "switch_archer_legion_target action_legion_number:{}",
-            self.action_legion_number
+            "switch_archer_legion_target action_target_number:{}, action_legion_number:{}",
+            self.action_target_number, self.action_legion_number
         );
 
         let binding = self.list.borrow_mut();
